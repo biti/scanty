@@ -9,6 +9,7 @@ It is not a blogging engine, but it's small and easy to modify, so it could be
 the starting point for your blog, too.
 
 Update by liuzihua.
+...
 
 == Features
 
