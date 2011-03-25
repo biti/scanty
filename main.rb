@@ -30,6 +30,11 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
 require 'post'
 
 helpers do
+
+	def partial(template, locals = {})
+		erb(template, :layout => false, :locals => locals)
+	end
+
 	def admin?
 		request.cookies[Blog.admin_cookie_key] == Blog.admin_cookie_value
 	end
@@ -37,6 +42,7 @@ helpers do
 	def auth
 		stop [ 401, 'Not authorized' ] unless admin?
 	end
+
 end
 
 layout 'layout'
@@ -78,6 +84,14 @@ get '/feed' do
 	builder :feed
 end
 
+get '/about' do
+	erb :about
+end
+
+get '/projects' do
+	erb :projects
+end
+
 get '/rss' do
 	redirect '/feed', 301
 end
@@ -89,7 +103,7 @@ get '/auth' do
 end
 
 post '/auth' do
-	set_cookie(Blog.admin_cookie_key, Blog.admin_cookie_value) if params[:password] == Blog.admin_password
+	response.set_cookie(Blog.admin_cookie_key, Blog.admin_cookie_value) if params[:password] == Blog.admin_password
 	redirect '/'
 end
 
