@@ -15,7 +15,7 @@ configure do
 		:admin_password => 'change me',
 		:admin_cookie_key => 'scanty_admin',
 		:admin_cookie_value => '51d6d976913ace58',
-		:disqus_shortname => nil
+		:disqus_shortname => 'liuzihua'
 	)
 end
 
