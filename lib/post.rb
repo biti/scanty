@@ -1,6 +1,7 @@
-require File.dirname(__FILE__) + '/../vendor/maruku/maruku'
+#require File.dirname(__FILE__) + '/../vendor/maruku/maruku'
 
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../vendor/syntax'
+#$LOAD_PATH.unshift File.dirname(__FILE__) + '/../vendor/syntax'
+require 'maruku'
 require 'syntax/convertors/html'
 
 class Post < Sequel::Model
