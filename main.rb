@@ -12,7 +12,7 @@ configure do
 		:title => '简单笔记',
 		:author => 'liuzihua',
 		:url_base => 'http://localhost:4567/',
-		:admin_password => 'change me',
+		:admin_password => 'huahua888',
 		:admin_cookie_key => 'scanty_admin',
 		:admin_cookie_value => '51d6d976913ace58',
 		:disqus_shortname => 'liuzihua'
